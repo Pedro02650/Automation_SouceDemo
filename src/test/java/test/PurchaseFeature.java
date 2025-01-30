@@ -6,13 +6,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import metodos.Metodos;
+import methods.Methods;
 import pages.HomePage;
-import pages.Page_introduction_step4;
+import pages.PageIntroductionStep4;
 
-public class PurcheseFeature extends HomePage {
+public class PurchaseFeature extends HomePage {
 
-	Page_introduction_step4 introducaoDeDados = new Page_introduction_step4();
+	PageIntroductionStep4 introducaoDeDados = new PageIntroductionStep4();
 
 	@Before
 	public void OpenBrowser() {
@@ -28,31 +28,25 @@ public class PurcheseFeature extends HomePage {
 
 	@Given("que estou na página logado do Saucedemo")
 	public void que_estou_na_página_logado_do_saucedemo() {
-		Metodos.CurrentURL(LoggedPage);
+		Methods.CurrentURL(LoggedPage);
 
 	}
-	
-	
 
 	@When("Clico no botao adicionar ao carrinho")
 	public void clico_no_botao_adicionar_ao_carrinho() {
-		Metodos.clicar(BTN_AddToCart);
+		Methods.clicar(btnAddToCart);
 
 	}
-	
-	
 
 	@And("clico no botão Carrinho")
 	public void clico_no_botão_carrinho() {
 		try {
 			System.out.println(" ##### Clicando no botao CARRINHO... ##### ");
-			clicar(BTN_Cart);
+			clicar(btnCart);
 		} catch (Exception e) {
 			System.err.println("Erro encontrado foi: " + e.getCause());
 		}
 	}
-	
-	
 
 	@And("devo ser direcionado ao meu carrinho")
 	public void devo_ser_direcionado_ao_meu_carrinho() {
@@ -64,22 +58,18 @@ public class PurcheseFeature extends HomePage {
 			System.err.println("Erro encontrado foi: " + e.getCause());
 		}
 	}
-	
-	
 
 	@And("clico no botao (Checkout)")
 	public void clico_no_botao_checkout() {
 		try {
 			System.out.println(" ##### Clicando no botao CHECKOUT... ##### ");
-			Metodos.scrollthrough(BTN_Checkout);
-			Metodos.clicar(BTN_Checkout);
+			Methods.scrollthrough(btnCheckout);
+			Methods.clicar(btnCheckout);
 		} catch (Exception e) {
 			throw new io.cucumber.java.PendingException();
 		}
 
 	}
-	
-	
 
 	@And("sou direcinado a colcaor meus dados, nome, sobrenome, cep.")
 	public void sou_direcinado_a_colcaor_meus_dados_nome_sobrenome_cep() {
@@ -93,8 +83,6 @@ public class PurcheseFeature extends HomePage {
 		}
 
 	}
-	
-	
 
 	@And("recebo as informacoes do meu pedido")
 	public void recebo_as_informacoes_do_meu_pedido() {
@@ -102,7 +90,7 @@ public class PurcheseFeature extends HomePage {
 			System.out.println(" ##### Verificando url... ##### ");
 			CurrentURL(PurcheseInformation);
 			System.out.println(" ##### Clicando no botao finalizar compra ##### ");
-			clicar(BTN_FinalizePurchase);
+			clicar(btnFinalizePurchase);
 
 		} catch (Exception e) {
 			throw new io.cucumber.java.PendingException();
@@ -110,13 +98,11 @@ public class PurcheseFeature extends HomePage {
 		}
 
 	}
-	
-	
 
 	@Then("clico em finalizar e sou direcionado para pagina de compra feita")
 	public void clico_em_finalizar_e_sou_direcionado_para_pagina_de_compra_feita() {
 		try {
-			ValidElement(MSG_Accomplished_purchase, "Thank you for your order!");
+			ValidElement(msgAccomplished_purchase, "Thank you for your order!");
 			System.out.println("################# teste feito com sucesso ################");
 		} catch (Exception e) {
 			throw new io.cucumber.java.PendingException();

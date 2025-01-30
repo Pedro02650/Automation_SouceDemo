@@ -3,16 +3,14 @@ package test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import browsers.Navegador;
+import browsers.Chrome;
 import pages.HomePage;
-
 
 @SuppressWarnings("static-access")
 public class LoginFeature extends HomePage {
 
-	Navegador chrome = new Navegador();
+	Chrome chrome = new Chrome();
 
-	
 	@BeforeEach
 	public void OpenBrowser() {
 		chrome.openChrome();
@@ -25,10 +23,9 @@ public class LoginFeature extends HomePage {
 
 	}
 
-	//@Test
 	public void login() {
 
-	Home_login();
+		Home_login();
 
 	}
 
