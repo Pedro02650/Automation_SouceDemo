@@ -9,9 +9,12 @@ public class HomePage extends Methods {
 
 	public void homeLogin() {
 
-		escrever(fieldLoginUsername, "standard_user");
-		escrever(fieldLoginPassword, "secret_sauce");
-		clicar(btnLogin);
+		write(fieldLoginUsername, "standard_user");
+		write(fieldLoginPassword, "secret_sauce");
+		click(btnLogin);
+		write(fieldLoginUsername, "standard_user");
+		write(fieldLoginPassword, "secret_sauce");
+		click(btnLogin);
 
 	} 
 

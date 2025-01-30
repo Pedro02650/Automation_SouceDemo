@@ -12,13 +12,14 @@ public class Chrome extends Drivers {
 		options.addArguments("--headless");
 		options.addArguments("--disable-gpu");
 		options.addArguments("--window-size=1280x1024");
+		options.addArguments("--window-size=1280x1024");
 
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(LoginPage);
 	}
 
-	public void fecharNavegador() {
-		driver.quit(); 
+	public void browserQuit() {
+		driver.quit();
 	}
 }

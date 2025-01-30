@@ -1,7 +1,6 @@
 package runner;
 
 import org.junit.runner.RunWith;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -12,5 +11,5 @@ features = "src/test/resources/features",
 glue = "test"
 
 )
-public class TestRunner {
+public class TestRunner { 
 } 

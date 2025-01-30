@@ -34,7 +34,7 @@ public class PurchaseFeature extends HomePage {
 
 	@When("Clico no botao adicionar ao carrinho")
 	public void clico_no_botao_adicionar_ao_carrinho() {
-		Methods.clicar(btnAddToCart);
+		Methods.click(btnAddToCart);
 
 	}
 
@@ -42,7 +42,8 @@ public class PurchaseFeature extends HomePage {
 	public void clico_no_botão_carrinho() {
 		try {
 			System.out.println(" ##### Clicando no botao CARRINHO... ##### ");
-			clicar(btnCart);
+
+			click(btnCart);
 		} catch (Exception e) {
 			System.err.println("Erro encontrado foi: " + e.getCause());
 		}
@@ -64,7 +65,7 @@ public class PurchaseFeature extends HomePage {
 		try {
 			System.out.println(" ##### Clicando no botao CHECKOUT... ##### ");
 			Methods.scrollthrough(btnCheckout);
-			Methods.clicar(btnCheckout);
+			Methods.click(btnCheckout);
 		} catch (Exception e) {
 			throw new io.cucumber.java.PendingException();
 		}
@@ -90,7 +91,7 @@ public class PurchaseFeature extends HomePage {
 			System.out.println(" ##### Verificando url... ##### ");
 			CurrentURL(PurcheseInformation);
 			System.out.println(" ##### Clicando no botao finalizar compra ##### ");
-			clicar(btnFinalizePurchase);
+			click(btnFinalizePurchase);
 
 		} catch (Exception e) {
 			throw new io.cucumber.java.PendingException();

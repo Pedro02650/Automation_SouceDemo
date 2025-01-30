@@ -22,7 +22,7 @@ import drivers.Drivers;
 
 public class Methods extends Drivers {
 
-	public static void escrever(By by, String s) {
+	public static void write(By by, String s) {
 		try {
 			WebElement element = driver.findElement(by);
 			element.sendKeys(s);
@@ -32,8 +32,8 @@ public class Methods extends Drivers {
 
 	}
 
-	public static void clicar(By by) {
-		try { 
+	public static void click(By by) {
+		try {
 			WebElement element = driver.findElement(by);
 			element.click();
 		} catch (Exception e) {
@@ -85,7 +85,7 @@ public class Methods extends Drivers {
 		}
 	}
 
-	public static void esperarPorElemento(By elemento, int seg) {
+	public static void waitForElement(By elemento, int seg) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seg));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(elemento));
@@ -96,7 +96,7 @@ public class Methods extends Drivers {
 
 	}
 
-	public static void arrastarCursor(By elemento) {
+	public static void dragCursor(By elemento) {
 
 		WebElement elementoUm = driver.findElement(elemento);
 		new Actions(driver).moveToElement(elementoUm).perform();
