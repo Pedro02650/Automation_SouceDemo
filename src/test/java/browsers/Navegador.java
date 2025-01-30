@@ -1,27 +1,24 @@
 package browsers;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import drivers.Drivers;
 
 public class Navegador extends Drivers {
 	
-	public  void openChrome() {
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get(LoginPage);
-		
-		
-	}
-	
-	public  void fecharNavegador() {
-		
-		driver.quit();
-		
-		
-	}
-	
-	
+	public void openChrome() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");  
+		options.addArguments("--disable-gpu");  
+		options.addArguments("--window-size=1280x1024");  
 
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize(); 
+		driver.get(LoginPage);
+	}
+	
+	public void fecharNavegador() {
+		driver.quit();
+	}
 }
