@@ -20,7 +20,7 @@ public class Elements extends URLs {
 	protected static By btnCheckout_Cancel = By.xpath("//button[@id='cancel']");
 	protected static By btnCart = By.xpath("//a[@class='shopping_cart_link']");
 
-	protected static By msgAccomplished_purchase = By.xpath("//h2[text()='Thank you for your order!']");
+	protected static By msgAccomplishedPurchase = By.xpath("//h2[text()='Thank you for your order!']");
 	protected static By btnContinueShopping = By.xpath("//button[@id='continue-shopping']");
 	protected static By divShoppingInformation = By.xpath("//div[@data-test='shipping-info-label']");
 	protected static By imgBackPack = By.xpath("//img[@data-test='inventory-item-sauce-labs-backpack-img']");

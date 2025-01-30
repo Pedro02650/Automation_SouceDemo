@@ -1,22 +1,18 @@
 package pages;
 
-import browsers.Navegador;
-import metodos.Metodos;
+import browsers.Chrome;
+import methods.Methods;
 
-public class HomePage extends Metodos{
-	
-	
-	public Navegador navegador = new Navegador();
-	
-	public void Home_login() {
-		
-		escrever(Field_Login_username, "standard_user");
-		escrever(Field_Login_password, "secret_sauce");
-		clicar(BTN_Login);
-		
-	}
-	
-	
-	
+public class HomePage extends Methods {
+
+	public Chrome navegador = new Chrome();
+
+	public void homeLogin() {
+
+		escrever(fieldLoginUsername, "standard_user");
+		escrever(fieldLoginPassword, "secret_sauce");
+		clicar(btnLogin);
+
+	} 
 
 }

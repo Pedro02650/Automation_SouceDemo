@@ -33,7 +33,7 @@ public class Methods extends Drivers {
 	}
 
 	public static void clicar(By by) {
-		try {
+		try { 
 			WebElement element = driver.findElement(by);
 			element.click();
 		} catch (Exception e) {

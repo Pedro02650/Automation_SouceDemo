@@ -17,7 +17,7 @@ public class PurchaseFeature extends HomePage {
 	@Before
 	public void OpenBrowser() {
 		navegador.openChrome();
-		Home_login();
+		homeLogin();
 
 	}
 
@@ -71,8 +71,8 @@ public class PurchaseFeature extends HomePage {
 
 	}
 
-	@And("sou direcinado a colcaor meus dados, nome, sobrenome, cep.")
-	public void sou_direcinado_a_colcaor_meus_dados_nome_sobrenome_cep() {
+	@And("sou direcionado a colocar meus dados, nome, sobrenome, cep.")
+	public void sou_direcionado_a_colocar_meus_dados_nome_sobrenome_cep() {
 		try {
 			System.out.println(" ##### Introduzindo nome, sobrenome e cep... ##### ");
 			introducaoDeDados.dadosStep4();
@@ -102,7 +102,7 @@ public class PurchaseFeature extends HomePage {
 	@Then("clico em finalizar e sou direcionado para pagina de compra feita")
 	public void clico_em_finalizar_e_sou_direcionado_para_pagina_de_compra_feita() {
 		try {
-			ValidElement(msgAccomplished_purchase, "Thank you for your order!");
+			ValidElement(msgAccomplishedPurchase, "Thank you for your order!");
 			System.out.println("################# teste feito com sucesso ################");
 		} catch (Exception e) {
 			throw new io.cucumber.java.PendingException();

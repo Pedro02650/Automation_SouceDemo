@@ -18,7 +18,7 @@ public class Edge extends Drivers {
 			edge.get(URL);
 		} catch (Exception e) {
 			System.err.println("Causa raiz do erro: " + e.getCause());
-		}
+		} 
 	}
 
 	public void quitEdge() {

@@ -19,6 +19,6 @@ public class Chrome extends Drivers {
 	}
 
 	public void fecharNavegador() {
-		driver.quit();
+		driver.quit(); 
 	}
 }

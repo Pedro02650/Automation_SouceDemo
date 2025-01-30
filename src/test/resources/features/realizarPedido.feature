@@ -11,7 +11,7 @@ Feature: Realizar pedido
     And clico no botão Carrinho
     And devo ser direcionado ao meu carrinho
     And clico no botao Checkout
-    And sou direcinado a colcaor meus dados, nome, sobrenome, cep.
+    And sou direcionado a colocar meus dados, nome, sobrenome, cep.
     And recebo as informacoes do meu pedido
     Then clico em finalizar e sou direcionado para pagina de compra feita
 

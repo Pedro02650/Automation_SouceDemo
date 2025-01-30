@@ -18,14 +18,14 @@ public class LoginFeature extends HomePage {
 	}
 
 	@AfterEach
-	public void fechatnavegador() {
+	public void fecharNavegador() {
 		chrome.fecharNavegador();
 
 	}
 
 	public void login() {
 
-		Home_login();
+		homeLogin();
 
 	}
 
