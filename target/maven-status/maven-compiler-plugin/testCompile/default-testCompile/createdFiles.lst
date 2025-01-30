@@ -1,0 +1,10 @@
+test/PurcheseFeature.class
+runner/TestRunner.class
+pages/Page_introduction_step4.class
+test/LoginFeature.class
+pages/HomePage.class
+runner/Navegador.class
+drivers/Drivers.class
+resources/URLs.class
+metodos/Metodos.class
+resources/Elementos.class
