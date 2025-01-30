@@ -1,0 +1,37 @@
+name: Maven Build and Test
+
+on:
+  push:
+    branches:
+      - main # Roda a pipeline ao fazer push na branch main
+  pull_request:
+    branches:
+      - main # Roda a pipeline para PRs na branch main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout do código
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Configurar o Java
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17 
+        distribution: 'temurin'
+
+    - name: Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven
+
+    # Step 4: Executar o Maven
+    - name: Build with Maven
+      run: mvn clean install -DskipTests=false
