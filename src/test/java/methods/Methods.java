@@ -1,13 +1,11 @@
 package methods;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,7 +15,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import drivers.Drivers;
 
 public class Methods extends Drivers {
@@ -27,7 +24,7 @@ public class Methods extends Drivers {
 			WebElement element = driver.findElement(by);
 			element.sendKeys(s);
 		} catch (Exception e) {
-			System.err.println("Causa raiz do erro: " + e.getCause());
+			System.err.println("Root cause of the error: " + e.getCause());
 		}
 
 	}
@@ -37,7 +34,7 @@ public class Methods extends Drivers {
 			WebElement element = driver.findElement(by);
 			element.click();
 		} catch (Exception e) {
-			System.err.println("Causa raiz do erro: " + e.getCause());
+			System.err.println("Root cause of the error: " + e.getCause());
 		}
 
 	}
@@ -46,13 +43,6 @@ public class Methods extends Drivers {
 
 		String CapturedText = driver.findElement(by).getText();
 		assertEquals(s, CapturedText);
-
-	}
-
-	public static void validarElemento(By by) {
-
-		String el = driver.findElement(by).getText();
-		assertEquals(by, el);
 
 	}
 
@@ -91,7 +81,7 @@ public class Methods extends Drivers {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(elemento));
 
 		} catch (Exception e) {
-			System.err.println("Causa raiz do erro: " + e.getCause());
+			System.err.println("Root cause of the error: " + e.getCause());
 		}
 
 	}
@@ -108,5 +98,9 @@ public class Methods extends Drivers {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 
+	}
+
+	public static void close() {
+		driver.quit();
 	}
 }

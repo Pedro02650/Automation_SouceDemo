@@ -1,5 +1,6 @@
 package test;
 
+import browsers.Chrome;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -11,19 +12,20 @@ import pages.HomePage;
 import pages.PageIntroductionStep4;
 
 public class PurchaseFeature extends HomePage {
-
-	PageIntroductionStep4 introducaoDeDados = new PageIntroductionStep4();
+	
+    Methods methods = new Methods();
+	PageIntroductionStep4 introductionData = new PageIntroductionStep4();
 
 	@Before
 	public void OpenBrowser() {
-		navegador.openChrome();
+		Chrome.open();
 		homeLogin();
 
 	}
 
 	@After
 	public void closeBrowser() {
-
+		Methods.close();
 	}
 
 	@Given("que estou na página logado do Saucedemo")
@@ -76,9 +78,9 @@ public class PurchaseFeature extends HomePage {
 	public void sou_direcionado_a_colocar_meus_dados_nome_sobrenome_cep() {
 		try {
 			System.out.println(" ##### Introduzindo nome, sobrenome e cep... ##### ");
-			introducaoDeDados.dadosStep4();
+			introductionData.dadosStep4();
 			System.out.println(" ##### Clicando no botao continuar... ##### ");
-			introducaoDeDados.clicarContinuar();
+			introductionData.clicarContinuar();
 		} catch (Exception e) {
 			throw new io.cucumber.java.PendingException();
 		}
