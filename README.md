@@ -44,7 +44,7 @@ https://docs.oracle.com/en/java/
 
 ## Observation
  - Make sure you have Java 11 or higher installed on your machine
- - Install cucumber plugin in your IDE Ex: VS Code or IntelliJ
+ - Install cucumber plugin in your IDE Ex: VS Code, IntelliJ or Eclipse
 
 ## Feature Purchase on the Saucedemo website
 
