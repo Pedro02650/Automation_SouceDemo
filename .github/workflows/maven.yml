@@ -25,19 +25,19 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Set report directory variable
-      run: echo "REPORTS_DIR=target/e2e" >> $GITHUB_ENV
+      run: echo "REPORTS_DIR=${{ github.workspace }}/target/report-cucumber" >> $GITHUB_ENV
 
     - name: Create report directory
       run: mkdir -p $REPORTS_DIR
 
     - name: Run tests
-      run: mvn test -Dtest=TestRunner -Dplatform=ci -Dcluecumber.jsonDirectory=$REPORTS_DIR
+      run: mvn test -Dtest=TestRunner -Dplatform=ci
 
     - name: Generate Cluecumber report
-      run: mvn cluecumber-report:reporting -Dcluecumber.jsonDirectory=$REPORTS_DIR -Dcluecumber.reportDirectory=$REPORTS_DIR
+      run: mvn cluecumber-maven:reporting -Dcluecumber.jsonDirectory=$REPORTS_DIR -Dcluecumber.reportDirectory=$REPORTS_DIR
 
     - name: Upload Cluecumber reports
       uses: actions/upload-artifact@v4
       with:
         name: cluecumber-reports
-        path: target/e2e
+        path: $REPORTS_DIR
