@@ -59,7 +59,3 @@ mvn test -Dtest=TestRunner -Dplatform=local
 
 Run in the pipeline: 
 mvn test -Dtest=TestRunner -Dplatform=ci
-
-Tests go to folder:
-target/report-cucumber
-
