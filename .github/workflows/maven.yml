@@ -26,3 +26,9 @@ jobs:
     
     - name: Run tests
       run: mvn test -Dtest=TestRunner -Dplatform=ci
+
+    - name: Upload test reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: cucumber-reports
+        path: target/cucumber-reports
